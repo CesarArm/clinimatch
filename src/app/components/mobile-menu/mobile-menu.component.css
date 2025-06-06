@@ -1,0 +1,27 @@
+/* Estilos adicionales si necesitas algo específico */
+.mobile-menu-transition {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Animación suave para los submenús */
+.submenu-transition {
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Scroll personalizado para el menú */
+.mobile-menu-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.mobile-menu-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.mobile-menu-scroll::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 2px;
+}
+
+.mobile-menu-scroll::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}

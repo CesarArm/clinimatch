@@ -1,0 +1,164 @@
+<!-- Mobile Menu (Sidebar) -->
+<div
+  id="side-bar"
+  class="fixed top-0 right-0 h-full w-80 bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out"
+  [ngClass]="{'translate-x-0': isOpen, 'translate-x-full': !isOpen}"
+>
+  <button
+    (click)="closeMenu()"
+    class="absolute top-4 left-4 text-gray-700 hover:text-blue-600 focus:outline-none text-xl"
+  >
+    <i class="fa-regular fa-times"></i>
+  </button>
+
+  <!-- Mobile Menu Content -->
+  <div class="p-6 flex flex-col h-full overflow-y-auto">
+    <nav class="mt-12 flex-1">
+      <ul class="space-y-4">
+        <!-- Home -->
+        <li>
+          <div class="flex flex-col">
+            <button
+              (click)="toggleSubmenu('home')"
+              class="flex items-center justify-between font-semibold text-gray-900 hover:text-blue-600 w-full text-left"
+            >
+              Home
+              <i class="fa-solid fa-chevron-down transition-transform"
+                 [ngClass]="{'rotate-180': activeSubmenu === 'home'}"></i>
+            </button>
+            <ul
+              class="ml-4 mt-2 space-y-2 overflow-hidden transition-all duration-300"
+              [ngClass]="{'max-h-96 opacity-100': activeSubmenu === 'home', 'max-h-0 opacity-0': activeSubmenu !== 'home'}"
+            >
+              <li><a href="index.html" class="block text-gray-600 hover:text-blue-400 py-1">Main Home</a></li>
+              <li><a href="index-two.html" class="block text-gray-600 hover:text-blue-400 py-1">Home Two</a></li>
+              <li><a href="index-three.html" class="block text-gray-600 hover:text-blue-400 py-1">Home Three</a></li>
+              <li><a href="index-four.html" class="block text-gray-600 hover:text-blue-400 py-1">Home Four</a></li>
+              <li><a href="index-five.html" class="block text-gray-600 hover:text-blue-400 py-1">Home Five</a></li>
+              <li><a href="index-six.html" class="block text-gray-600 hover:text-blue-400 py-1">Home Six</a></li>
+              <li><a href="index-seven.html" class="block text-gray-600 hover:text-blue-400 py-1">Home Seven</a></li>
+              <li><a href="index-eight.html" class="block text-gray-600 hover:text-blue-400 py-1">Home Eight</a></li>
+              <li><a href="index-nine.html" class="block text-gray-600 hover:text-blue-400 py-1">Home Nine</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Pages -->
+        <li>
+          <div class="flex flex-col">
+            <button
+              (click)="toggleSubmenu('pages')"
+              class="flex items-center justify-between font-semibold text-gray-900 hover:text-blue-600 w-full text-left"
+            >
+              Pages
+              <i class="fa-solid fa-chevron-down transition-transform"
+                 [ngClass]="{'rotate-180': activeSubmenu === 'pages'}"></i>
+            </button>
+            <ul
+              class="ml-4 mt-2 space-y-2 overflow-hidden transition-all duration-300"
+              [ngClass]="{'max-h-96 opacity-100': activeSubmenu === 'pages', 'max-h-0 opacity-0': activeSubmenu !== 'pages'}"
+            >
+              <li><a href="about.html" class="block text-gray-600 hover:text-blue-400 py-1">About</a></li>
+              <li><a href="doctors-one.html" class="block text-gray-600 hover:text-blue-400 py-1">Our Doctors</a></li>
+              <li><a href="doctors-two.html" class="block text-gray-600 hover:text-blue-400 py-1">Our Doctors v2</a></li>
+              <li><a href="doctor-details.html" class="block text-gray-600 hover:text-blue-400 py-1">Doctors Details</a></li>
+              <li><a href="appoinment.html" class="block text-gray-600 hover:text-blue-400 py-1">Appointment</a></li>
+              <li><a href="procedures.html" class="block text-gray-600 hover:text-blue-400 py-1">Procedures</a></li>
+              <li><a href="portfolio.html" class="block text-gray-600 hover:text-blue-400 py-1">Portfolio</a></li>
+              <li><a href="portfolio-details.html" class="block text-gray-600 hover:text-blue-400 py-1">Portfolio Details</a></li>
+              <li><a href="faq.html" class="block text-gray-600 hover:text-blue-400 py-1">FAQ's</a></li>
+              <li><a href="shedule.html" class="block text-gray-600 hover:text-blue-400 py-1">Doctor Schedule</a></li>
+              <li><a href="pricing.html" class="block text-gray-600 hover:text-blue-400 py-1">Pricing Plan</a></li>
+              <li><a href="before-after.html" class="block text-gray-600 hover:text-blue-400 py-1">Before After</a></li>
+              <li><a href="contactus.html" class="block text-gray-600 hover:text-blue-400 py-1">Contact Us</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Service -->
+        <li>
+          <div class="flex flex-col">
+            <button
+              (click)="toggleSubmenu('service')"
+              class="flex items-center justify-between font-semibold text-gray-900 hover:text-blue-600 w-full text-left"
+            >
+              Service
+              <i class="fa-solid fa-chevron-down transition-transform"
+                 [ngClass]="{'rotate-180': activeSubmenu === 'service'}"></i>
+            </button>
+            <ul
+              class="ml-4 mt-2 space-y-2 overflow-hidden transition-all duration-300"
+              [ngClass]="{'max-h-96 opacity-100': activeSubmenu === 'service', 'max-h-0 opacity-0': activeSubmenu !== 'service'}"
+            >
+              <li><a href="service.html" class="block text-gray-600 hover:text-blue-400 py-1">Service</a></li>
+              <li><a href="service-details.html" class="block text-gray-600 hover:text-blue-400 py-1">Service Details</a></li>
+              <li><a href="service-details-2.html" class="block text-gray-600 hover:text-blue-400 py-1">Service Details v2</a></li>
+              <li><a href="service-details-3.html" class="block text-gray-600 hover:text-blue-400 py-1">Service Details v3</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Blog -->
+        <li>
+          <div class="flex flex-col">
+            <button
+              (click)="toggleSubmenu('blog')"
+              class="flex items-center justify-between font-semibold text-gray-900 hover:text-blue-600 w-full text-left"
+            >
+              Blog
+              <i class="fa-solid fa-chevron-down transition-transform"
+                 [ngClass]="{'rotate-180': activeSubmenu === 'blog'}"></i>
+            </button>
+            <ul
+              class="ml-4 mt-2 space-y-2 overflow-hidden transition-all duration-300"
+              [ngClass]="{'max-h-96 opacity-100': activeSubmenu === 'blog', 'max-h-0 opacity-0': activeSubmenu !== 'blog'}"
+            >
+              <li><a href="blog.html" class="block text-gray-600 hover:text-blue-400 py-1">Blog Post</a></li>
+              <li><a href="blog-list.html" class="block text-gray-600 hover:text-blue-400 py-1">Blog List</a></li>
+              <li><a href="blog-details.html" class="block text-gray-600 hover:text-blue-400 py-1">Blog Details</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Contact -->
+        <li>
+          <a href="contactus.html" class="font-semibold text-gray-900 hover:text-blue-600 block py-2">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Social Icons -->
+    <div class="mt-8 pt-8 border-t border-gray-200">
+      <ul class="flex space-x-6 justify-center">
+        <li>
+          <a href="#" class="text-gray-500 hover:text-blue-600 text-xl">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="text-gray-500 hover:text-blue-600 text-xl">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="text-gray-500 hover:text-blue-600 text-xl">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="text-gray-500 hover:text-blue-600 text-xl">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Overlay -->
+<div
+  id="anywhere-home"
+  class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-40 transition-opacity duration-300"
+  [ngClass]="{'opacity-50 visible': isOpen, 'opacity-0 invisible': !isOpen}"
+  (click)="closeMenu()"
+></div>
