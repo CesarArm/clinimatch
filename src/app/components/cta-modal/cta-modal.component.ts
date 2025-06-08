@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { ModalService } from '../../services/modal.service';
 import { SheetsService } from '../../services/sheets.service';
+import { lastValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-cta-modal',
@@ -69,16 +70,10 @@ export class CtaModalComponent {
       };
 
       // Enviar datos a Google Sheets
-      const response = await fetch(this.APPS_SCRIPT_URL, {
-        method: 'POST',
-        body: JSON.stringify(datos),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
+      const responseObservable = this.sheetsService.enviarDatos(datos);
+        const resultado = await lastValueFrom(responseObservable);
 
-      const resultado = await response.json();
-
+      // Verificar el resultado
       if (resultado.result === 'success') {
         // Éxito al guardar
         Swal.fire({
