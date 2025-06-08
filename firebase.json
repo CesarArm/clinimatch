@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/clinimatch",
+    "public": "dist/clinimatch/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
