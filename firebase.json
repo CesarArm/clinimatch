@@ -1,10 +1,13 @@
 {
   "hosting": {
-    "public": "clinimatch",
+    "public": "dist/clinimatch",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "rewrites": [
+      { "source": "**", "destination": "/index.html" }
     ]
   }
 }
