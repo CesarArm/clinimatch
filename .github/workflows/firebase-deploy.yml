@@ -1,0 +1,23 @@
+name: Deploy to Firebase Hosting
+
+on:
+  push:
+    branches:
+      - main # O la rama que uses para producción
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18 # O la versión que uses
+      - run: npm ci
+      - run: npm run build -- --configuration production # O el nombre de tu configuración de producción
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_CLINIMATCH_51256 }}' # Reemplaza <nombre-de-tu-proyecto>
+          channelId: live
+          projectId: 1:209207710574:web:284dbcb1de778f6660e77f # Reemplaza con el ID de tu proyecto de Firebase

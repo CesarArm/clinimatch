@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "clinimatch",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

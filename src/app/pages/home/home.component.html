@@ -20,8 +20,8 @@
         <div class="flex items-center gap-6 mb-8">
           <!-- Botón principal -->
           <button
-            (click)="openCtaModal()"
-            class="px-8 py-3 bg-sky-600 text-white rounded-lg font-semibold shadow hover:bg-sky-500 transition"
+            (click)="openModal()"
+            class="px-8 py-3 bg-sky-600 text-white rounded-lg font-semibold shadow hover:bg-sky-500 transition cursor-pointer"
           >
             Registrarme como paciente
           </button>
@@ -118,7 +118,7 @@
       <div
         class="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300"
       >
-        <a href="service-details-2.html">
+        <a routerLink="/curaciones">
           <img
             src="assets/images/service/01.jpg"
             alt="Curaciones Dentales"
@@ -127,8 +127,8 @@
         </a>
         <div class="p-4">
           <a
-            href="#"
-            class="text-lg font-semibold text-gray-900 hover:text-sky-600"
+            routerLink="/curaciones"
+            class="text-lg font-semibold text-gray-900 hover:text-sky-600 cursor-pointer"
           >
             Curaciones Dentales
           </a>
@@ -138,7 +138,7 @@
       <div
         class="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300"
       >
-        <a href="service-details-2.html">
+        <a routerLink="/blanqueamiento">
           <img
             src="assets/images/service/02.jpg"
             alt="Blanqueamiento Dental"
@@ -147,8 +147,8 @@
         </a>
         <div class="p-4">
           <a
-            href="#"
-            class="text-lg font-semibold text-gray-900 hover:text-sky-600"
+            routerLink="/blanqueamiento"
+            class="text-lg font-semibold text-gray-900 hover:text-sky-600 cursor-pointer"
           >
             Blanqueamiento Dental
           </a>
@@ -158,7 +158,7 @@
       <div
         class="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300"
       >
-        <a href="service-details-2.html">
+        <a routerLink="/implantes">
           <img
             src="assets/images/service/03.jpg"
             alt="Implantes Dentales"
@@ -167,8 +167,8 @@
         </a>
         <div class="p-4">
           <a
-            href="#"
-            class="text-lg font-semibold text-gray-900 hover:text-sky-600"
+            routerLink="/implantes"
+            class="text-lg font-semibold text-gray-900 hover:text-sky-600 cursor-pointer"
           >
             Implantes Dentales
           </a>
@@ -178,7 +178,7 @@
       <div
         class="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300"
       >
-        <a href="service-details-2.html">
+        <a routerLink="/cirugia">
           <img
             src="assets/images/service/04.jpg"
             alt="Cirugia Oral"
@@ -187,8 +187,8 @@
         </a>
         <div class="p-4">
           <a
-            href="#"
-            class="text-lg font-semibold text-gray-900 hover:text-sky-600"
+            routerLink="/cirugia"
+            class="text-lg font-semibold text-gray-900 hover:text-sky-600 cursor-pointer"
           >
             Cirugía Oral
           </a>
@@ -368,8 +368,8 @@
         odontología listos para ayudarte.
       </h2>
       <button
-        (click)="openCtaModal()"
-        class="inline-block px-8 py-3 bg-sky-600 text-white rounded-lg font-semibold shadow hover:bg-sky-500 transition"
+        (click)="openModal()"
+        class="inline-block px-8 py-3 bg-sky-600 text-white rounded-lg font-semibold shadow hover:bg-sky-500 transition cursor-pointer"
       >
         Registrarme como paciente
       </button>
@@ -377,6 +377,173 @@
   </div>
 </div>
 
+<!-- En tu componente HTML (.html) -->
+<div class="py-16">
+  <div class="container mx-auto px-4">
+    <div class="mb-12">
+      <h2 class="text-3xl font-bold text-blue-900 text-center">
+        Preguntas Frecuentes
+      </h2>
+    </div>
+
+    <div class="space-y-4">
+      <!-- FAQ Item 1 -->
+      <div class="border border-gray-200 rounded-lg">
+        <button
+          class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition-colors duration-200 flex justify-between items-center"
+          (click)="toggleFaq('faq1')"
+        >
+          <span class="font-semibold text-gray-800"
+            >¿Cuál es el propósito de CliniMatch?</span
+          >
+          <svg
+            class="w-5 h-5 text-gray-500 transform transition-transform duration-200"
+            id="faq1-icon"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </button>
+        <div class="px-6 pb-4 text-gray-600 hidden" id="faq1-content">
+          CliniMatch conecta a pacientes que necesitan atención dental gratuita
+          con estudiantes de odontología que requieren práctica clínica
+          supervisada, creando una solución beneficiosa para ambas partes.
+        </div>
+      </div>
+
+      <!-- FAQ Item 2 -->
+      <div class="border border-gray-200 rounded-lg">
+        <button
+          class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition-colors duration-200 flex justify-between items-center"
+          (click)="toggleFaq('faq2')"
+        >
+          <span class="font-semibold text-gray-800"
+            >¿Cómo puedo encontrar un estudiante de odontología?</span
+          >
+          <svg
+            class="w-5 h-5 text-gray-500 transform transition-transform duration-200"
+            id="faq2-icon"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </button>
+        <div class="px-6 pb-4 text-gray-600 hidden" id="faq2-content">
+          Simplemente regístrate en nuestra plataforma, completa tu perfil con
+          tus necesidades dentales, y los estudiantes podrán contactarte
+          directamente para coordinar tu cita.
+        </div>
+      </div>
+
+      <!-- FAQ Item 3 -->
+      <div class="border border-gray-200 rounded-lg">
+        <button
+          class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition-colors duration-200 flex justify-between items-center"
+          (click)="toggleFaq('faq3')"
+        >
+          <span class="font-semibold text-gray-800"
+            >¿Cómo está protegida mi información?</span
+          >
+          <svg
+            class="w-5 h-5 text-gray-500 transform transition-transform duration-200"
+            id="faq3-icon"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </button>
+        <div class="px-6 pb-4 text-gray-600 hidden" id="faq3-content">
+          Utilizamos protocolos de seguridad avanzados y cumplimos con todas las
+          regulaciones de privacidad para proteger tu información personal y
+          médica.
+        </div>
+      </div>
+
+      <!-- FAQ Item 4 -->
+      <div class="border border-gray-200 rounded-lg">
+        <button
+          class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition-colors duration-200 flex justify-between items-center"
+          (click)="toggleFaq('faq4')"
+        >
+          <span class="font-semibold text-gray-800"
+            >¿Qué necesito para registrarme en la plataforma?</span
+          >
+          <svg
+            class="w-5 h-5 text-gray-500 transform transition-transform duration-200"
+            id="faq4-icon"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </button>
+        <div class="px-6 pb-4 text-gray-600 hidden" id="faq4-content">
+          Solo necesitas una dirección de email válida, tus datos personales
+          básicos y una descripción de tus necesidades dentales para comenzar.
+        </div>
+      </div>
+
+      <!-- FAQ Item 5 -->
+      <div class="border border-gray-200 rounded-lg">
+        <button
+          class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition-colors duration-200 flex justify-between items-center"
+          (click)="toggleFaq('faq5')"
+        >
+          <span class="font-semibold text-gray-800"
+            >¿Qué debo hacer en caso de una emergencia dental?</span
+          >
+          <svg
+            class="w-5 h-5 text-gray-500 transform transition-transform duration-200"
+            id="faq5-icon"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </button>
+        <div class="px-6 pb-4 text-gray-600 hidden" id="faq5-content">
+          En caso de emergencia dental, contacta inmediatamente a un servicio de
+          urgencias. CliniMatch está diseñado para tratamientos programados, no
+          para emergencias.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <app-footer></app-footer>
 
-<app-mobile-menu #mobileMenu></app-mobile-menu>
+<!-- <app-mobile-menu #mobileMenu></app-mobile-menu> -->
