@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class SheetsService {
 
-  private readonly googleAppsScriptUrl = 'https://script.google.com/macros/s/AKfycbyCWDAwI0_jUtRfpTIRZBKusVh_cUUiT7Ba19zElFA7MTVnKEMNshY1Dat9a8jM13mv/exec';  // Reemplaza con la URL de tu script
+  private readonly googleAppsScriptUrl = 'https://script.google.com/macros/s/AKfycbyVSKvHeFob1N7n0lGG0Scz1FiK93SSubzZL_E1sPTrIfZ1WbVru2nLfQAw5uUAZ5f3/exec';
 
   constructor(private http: HttpClient) { }
 
