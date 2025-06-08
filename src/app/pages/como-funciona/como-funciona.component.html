@@ -1,0 +1,45 @@
+<!-- Header -->
+<app-header></app-header>
+
+<!-- como-funciona.component.html -->
+<div class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">¿Cómo funciona CliniMatch?</h2>
+    <div class="flex flex-col md:flex-row gap-8 justify-center">
+      <!-- Paso 1: Registro del paciente -->
+      <div class="flex-1 bg-white rounded-lg shadow-lg p-8 flex flex-col items-center">
+        <div class="mb-4">
+          <img src="assets/images/como-funciona/registro.png" alt="Registro del paciente" class="w-20 h-20 object-contain">
+        </div>
+        <h3 class="text-xl font-semibold text-blue-700 mb-2">1. Registro del paciente</h3>
+        <p class="text-gray-600 text-center">
+          El paciente se registra en la plataforma completando un formulario sencillo con sus datos y necesidades dentales.
+        </p>
+      </div>
+      <!-- Paso 2: Contacto del estudiante -->
+      <div class="flex-1 bg-white rounded-lg shadow-lg p-8 flex flex-col items-center">
+        <div class="mb-4">
+          <img src="assets/images/como-funciona/contacto.png" alt="Contacto del estudiante" class="w-20 h-20 object-contain">
+        </div>
+        <h3 class="text-xl font-semibold text-blue-700 mb-2">2. Contacto del estudiante</h3>
+        <p class="text-gray-600 text-center">
+          Un estudiante de odontología revisa los registros y contacta al paciente para coordinar la cita y el tratamiento.
+        </p>
+      </div>
+      <!-- Paso 3: Atención del paciente -->
+      <div class="flex-1 bg-white rounded-lg shadow-lg p-8 flex flex-col items-center">
+        <div class="mb-4">
+          <img src="assets/images/como-funciona/atencion.png" alt="Atención del paciente" class="w-20 h-20 object-contain">
+        </div>
+        <h3 class="text-xl font-semibold text-blue-700 mb-2">3. Atención del paciente</h3>
+        <p class="text-gray-600 text-center">
+          El paciente asiste a la clínica universitaria donde recibe la atención dental gratuita por parte del estudiante supervisado.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
+
+<app-mobile-menu #mobileMenu></app-mobile-menu>

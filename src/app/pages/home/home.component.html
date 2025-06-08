@@ -2,11 +2,11 @@
 <app-header></app-header>
 
 <!-- Banner principal -->
-<div class="relative bg-sky-100 py-20">
+<div class="relative bg-blue-100 py-20">
   <div class="container mx-auto px-4">
     <div class="flex flex-col lg:flex-row items-center gap-12">
       <!-- Texto principal -->
-      <div class="flex-1">
+      <div class="flex-1 pl-10">
         <h1
           class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight"
         >
@@ -19,12 +19,12 @@
         </p>
         <div class="flex items-center gap-6 mb-8">
           <!-- Botón principal -->
-          <a
-            href="appoinment.html"
+          <button
+            (click)="openCtaModal()"
             class="px-8 py-3 bg-sky-600 text-white rounded-lg font-semibold shadow hover:bg-sky-500 transition"
           >
             Registrarme como paciente
-          </a>
+          </button>
         </div>
       </div>
       <!-- Imagen -->
@@ -40,10 +40,10 @@
 </div>
 
 <!-- Why Choose Us Section -->
-<div class="py-16 bg-gray-900">
+<div class="py-12 bg-gray-900">
   <div class="max-w-7xl mx-auto px-4">
     <!-- <div class="bg-blue-100 rounded-2xl shadow-lg p-8"> -->
-    <div class="flex flex-col lg:flex-row items-end gap-12">
+    <div class="flex flex-col lg:flex-row items-center gap-12">
       <!-- Columna izquierda: texto y razones -->
       <div class="w-full lg:w-1/2 pr-0 lg:pr-12 mb-8 lg:mb-0">
         <div class="rounded-2xl overflow-hidden shadow-lg">
@@ -63,8 +63,8 @@
           <!-- Razón 1 -->
           <div class="flex items-start space-x-4rounded-lg py-3">
             <div>
-              <h6 class="text-lg font-semibold">
-                - Accede a tratamientos dentales gratuitos
+              <h6 class="text-xl font-semibold">
+                Accede a tratamientos dentales gratuitos
               </h6>
               <p class="text-sm">
                 Regístrate fácilmente y obtén atención profesional sin pagar.
@@ -74,8 +74,8 @@
           <!-- Razón 2 -->
           <div class="flex items-start space-x-4rounded-lg py-3">
             <div>
-              <h6 class="text-lg font-semibold">
-                - Encuentra atención rápida y sencilla
+              <h6 class="text-xl font-semibold">
+                Encuentra atención rápida y sencilla
               </h6>
               <p class="text-sm">
                 Nuestra plataforma te conecta con estudiantes listos para
@@ -86,8 +86,8 @@
           <!-- Razón 3 -->
           <div class="flex items-start space-x-4rounded-lg py-3">
             <div>
-              <h6 class="text-lg font-semibold">
-                - Confianza y seguridad para tu salud
+              <h6 class="text-xl font-semibold">
+                Confianza y seguridad para tu salud
               </h6>
               <p class="text-sm">
                 Todos los procedimientos son supervisados por especialistas
@@ -103,178 +103,118 @@
 </div>
 
 <!-- Dental Services Area -->
-<div class="py-16">
-  <div class="container mx-auto px-4">
+<div class="py-12 bg-gray-200">
+  <div class="container mx-auto px-16">
     <!-- Título de la sección -->
-    <div class="flex flex-col md:flex-row items-center justify-between mb-8">
-      <div class="mb-4 md:mb-0">
-        <div class="flex items-center space-x-3">
-          <img
-            src="assets/images/about/dental.svg"
-            alt="Dental"
-            class="h-8 w-8"
-          />
-          <span class="uppercase tracking-wider text-blue-600 font-semibold"
-            >Dental Services</span
-          >
-        </div>
-        <h2 class="text-3xl font-bold text-gray-900">
-          Your Complete Dental <br />
-          Care Solution
-        </h2>
-      </div>
-      <!-- Controles del carrusel (si decides implementarlo) -->
-      <div class="hidden md:flex items-center space-x-4">
-        <button class="text-gray-500 hover:text-blue-600">
-          <i class="fa-regular fa-arrow-left"></i>
-        </button>
-        <button class="text-gray-500 hover:text-blue-600">
-          <i class="fa-regular fa-arrow-right"></i>
-        </button>
-      </div>
+    <div class="mb-8 text-center md:text-left">
+      <h2 class="text-3xl font-bold text-gray-900">
+        Servicios Dentales <span class="text-sky-500">Ofrecidos</span>
+      </h2>
     </div>
 
     <!-- Servicios -->
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
       <!-- Servicio 1 -->
       <div
-        class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+        class="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300"
       >
         <a href="service-details-2.html">
           <img
             src="assets/images/service/01.jpg"
-            alt="Dental Fillings"
+            alt="Curaciones Dentales"
             class="w-full h-48 object-cover"
           />
         </a>
         <div class="p-4">
           <a
             href="#"
-            class="text-lg font-semibold text-gray-900 hover:text-blue-600"
-            >Dental Fillings</a
+            class="text-lg font-semibold text-gray-900 hover:text-sky-600"
           >
+            Curaciones Dentales
+          </a>
         </div>
       </div>
       <!-- Servicio 2 -->
       <div
-        class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+        class="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300"
       >
         <a href="service-details-2.html">
           <img
             src="assets/images/service/02.jpg"
-            alt="Teeth Whitening"
+            alt="Blanqueamiento Dental"
             class="w-full h-48 object-cover"
           />
         </a>
         <div class="p-4">
           <a
             href="#"
-            class="text-lg font-semibold text-gray-900 hover:text-blue-600"
-            >Teeth Whitening</a
+            class="text-lg font-semibold text-gray-900 hover:text-sky-600"
           >
+            Blanqueamiento Dental
+          </a>
         </div>
       </div>
       <!-- Servicio 3 -->
       <div
-        class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+        class="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300"
       >
         <a href="service-details-2.html">
           <img
             src="assets/images/service/03.jpg"
-            alt="Dental Implants"
+            alt="Implantes Dentales"
             class="w-full h-48 object-cover"
           />
         </a>
         <div class="p-4">
           <a
             href="#"
-            class="text-lg font-semibold text-gray-900 hover:text-blue-600"
-            >Dental Implants</a
+            class="text-lg font-semibold text-gray-900 hover:text-sky-600"
           >
+            Implantes Dentales
+          </a>
         </div>
       </div>
       <!-- Servicio 4 -->
       <div
-        class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+        class="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300"
       >
         <a href="service-details-2.html">
           <img
             src="assets/images/service/04.jpg"
-            alt="Oral Surgery"
+            alt="Cirugia Oral"
             class="w-full h-48 object-cover"
           />
         </a>
         <div class="p-4">
           <a
             href="#"
-            class="text-lg font-semibold text-gray-900 hover:text-blue-600"
-            >Oral Surgery</a
+            class="text-lg font-semibold text-gray-900 hover:text-sky-600"
           >
+            Cirugía Oral
+          </a>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Patient Success Portfolio -->
-<div class="py-16 bg-white">
-  <div class="container mx-auto px-4">
-    <!-- Título -->
-    <h2 class="text-3xl font-bold text-center text-gray-900 mb-10">
-      Patient Success Portfolio
-    </h2>
-    <div class="flex flex-col md:flex-row gap-8 items-center">
-      <!-- Imagen principal -->
-      <div class="w-full md:w-2/3">
-        <div class="rounded-2xl overflow-hidden shadow-lg">
-          <img
-            src="assets/images/portfolio/01.jpg"
-            alt="portfolio"
-            class="w-full h-auto object-cover"
-          />
-        </div>
-      </div>
-      <!-- Contenido lateral -->
-      <div
-        class="w-full md:w-1/3 bg-blue-50 rounded-2xl shadow-lg p-8 flex flex-col justify-center"
-      >
-        <h3 class="text-2xl font-bold text-blue-700 mb-4">
-          Dental <br />
-          Treatment
-        </h3>
-        <p class="text-gray-700 mb-6">
-          Our experienced dental team uses the latest techniques and
-          state-of-the-art equipment to deliver high-quality treatments tailored
-          to meet your individual needs
-        </p>
-        <a
-          href="#"
-          class="inline-block px-6 py-3 border border-blue-600 text-blue-600 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition"
-        >
-          View Details
-        </a>
       </div>
     </div>
   </div>
 </div>
 
 <!-- Counter Section -->
-<div class="py-16 bg-white">
+<div class="py-10 bg-blue-100">
   <div class="container mx-auto px-4">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       <!-- Counter 1 -->
       <div class="text-center">
         <div class="mb-4">
           <img
             src="assets/images/counter/01.svg"
             alt="Doctors"
-            class="mx-auto h-16 w-16"
+            class="mx-auto h-12 w-12"
           />
         </div>
         <h4 class="text-3xl font-bold text-gray-900 mb-2">
-          <span class="counter">214+</span>
+          <span class="counter">130+</span>
         </h4>
-        <p class="text-gray-600">Our Doctors</p>
+        <p class="text-gray-600">Doctores</p>
       </div>
 
       <!-- Counter 2 -->
@@ -283,13 +223,13 @@
           <img
             src="assets/images/counter/02.svg"
             alt="Patients"
-            class="mx-auto h-16 w-16"
+            class="mx-auto h-12 w-12"
           />
         </div>
         <h4 class="text-3xl font-bold text-gray-900 mb-2">
-          <span class="counter">3012+</span>
+          <span class="counter">207+</span>
         </h4>
-        <p class="text-gray-600">Patient</p>
+        <p class="text-gray-600">Pacientes</p>
       </div>
 
       <!-- Counter 3 -->
@@ -297,162 +237,31 @@
         <div class="mb-4">
           <img
             src="assets/images/counter/03.svg"
-            alt="Happy Patients"
-            class="mx-auto h-16 w-16"
+            alt="Pacientes atendidos"
+            class="mx-auto h-12 w-12"
           />
         </div>
         <h4 class="text-3xl font-bold text-gray-900 mb-2">
-          <span class="counter">3001+</span>
+          <span class="counter">173+</span>
         </h4>
-        <p class="text-gray-600">Happy Patients</p>
-      </div>
-
-      <!-- Counter 4 -->
-      <div class="text-center">
-        <div class="mb-4">
-          <img
-            src="assets/images/counter/04.svg"
-            alt="Awards"
-            class="mx-auto h-16 w-16"
-          />
-        </div>
-        <h4 class="text-3xl font-bold text-gray-900 mb-2">
-          <span class="counter">32+</span>
-        </h4>
-        <p class="text-gray-600">Winning Awards</p>
+        <p class="text-gray-600">Atenciones</p>
       </div>
     </div>
-  </div>
-</div>
-
-<!-- Get Appointment Area -->
-<div class="relative py-16 bg-gray-50">
-  <div class="container mx-auto px-4">
-    <div class="flex flex-col lg:flex-row items-center gap-12">
-      <!-- Contenido de texto -->
-      <div class="w-full lg:w-5/12">
-        <div class="mb-6 flex items-center space-x-3">
-          <img
-            src="assets/images/about/dental.svg"
-            alt="Dental"
-            class="h-8 w-8"
-          />
-          <span class="uppercase tracking-wider text-blue-600 font-semibold"
-            >Appointment</span
-          >
-        </div>
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">
-          MediWeb Doctor <br />
-          Consulting
-        </h2>
-        <p class="text-lg text-gray-600 mb-8">
-          At Mediweb, we offer expert dental consultations to address all your
-          oral health needs. Whether you have concerns about your teeth, gums,
-          or overall dental hygiene.
-        </p>
-
-        <!-- Botones y contacto -->
-        <div class="space-y-6">
-          <a
-            href="#"
-            class="inline-block px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold shadow hover:bg-blue-700 transition"
-          >
-            Book Appointment
-          </a>
-
-          <!-- Información de emergencia -->
-          <div
-            class="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-sm"
-          >
-            <div class="flex-shrink-0">
-              <img
-                src="assets/images/about/04.svg"
-                alt="Emergency"
-                class="h-12 w-12"
-              />
-            </div>
-            <div>
-              <span class="block text-sm text-gray-500">Emergency Call</span>
-              <a
-                href="tel:+1222451244"
-                class="text-lg font-semibold text-gray-900 hover:text-blue-600"
-                >+1 222 451 244</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Imagen -->
-      <div class="w-full lg:w-5/12 lg:ml-auto">
-        <div class="rounded-2xl overflow-hidden shadow-lg">
-          <img
-            src="assets/images/appoinment/04.jpg"
-            alt="appointment"
-            class="w-full h-auto object-cover"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Elemento decorativo inferior derecho -->
-  <div class="absolute bottom-0 right-0 w-32 opacity-60 pointer-events-none">
-    <img
-      src="assets/images/about/right-bottom.png"
-      alt="Decorative"
-      class="w-full h-auto"
-    />
-  </div>
-
-  <!-- Botón circular animado -->
-  <div
-    class="absolute top-1/2 right-8 transform -translate-y-1/2 hidden lg:block"
-  >
-    <a
-      class="relative flex items-center justify-center w-24 h-24 rounded-full bg-white shadow-lg hover:shadow-xl transition-all duration-300"
-      href="#view_in_opensea"
-    >
-      <svg
-        class="absolute animate-spin-slow text-blue-600"
-        viewBox="0 0 100 100"
-        width="100"
-        height="100"
-      >
-        <defs>
-          <path
-            id="circle1"
-            d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
-          ></path>
-        </defs>
-        <text font-size="11.75">
-          <textPath xlink:href="#circle1">
-            view in opensea • view in opensea •
-          </textPath>
-        </text>
-      </svg>
-      <span class="relative z-10 text-2xl text-blue-600">
-        <i class="fa-regular fa-tooth"></i>
-      </span>
-    </a>
   </div>
 </div>
 
 <!-- Testimonials Section -->
-<div class="py-16 bg-gray-50">
-  <div class="container mx-auto px-4">
+<div class="py-10 bg-gray-50">
+  <div class="container mx-auto py-4 px-16">
     <!-- Título -->
     <div class="mb-10 text-center">
-      <span class="uppercase text-blue-600 font-semibold tracking-wider"
-        >Client Feedback</span
-      >
       <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
-        Words from Our <br />
-        Patients
+        Testimonios de <br />
+        Nuestros Pacientes
       </h2>
     </div>
     <!-- Testimonios -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       <!-- Testimonio 1 -->
       <div
         class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center relative"
@@ -463,26 +272,11 @@
           class="w-10 h-10 mb-4"
         />
         <p class="text-gray-700 text-center mb-6">
-          Dr. Robert Thompson is an exceptional cardiologist. His ability to
-          explain complex medical issues in a way that's easy to understand is
-          truly impressive.
+          Gracias a CliniMatch pude atenderme sin costo y el trato fue
+          excelente. ¡Ahora sonrío con más confianza!
         </p>
         <div class="flex items-center space-x-4">
-          <img
-            src="assets/images/testimonials/01.png"
-            alt="testimonial"
-            class="w-14 h-14 rounded-full border-2 border-blue-200"
-          />
-          <div>
-            <h6 class="font-bold text-gray-900">David Patel</h6>
-            <div class="flex text-yellow-400">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
-          </div>
+          <h6 class="font-bold text-gray-900">María Fernanda Quispe</h6>
         </div>
         <img
           src="assets/images/testimonials/02.png"
@@ -500,26 +294,11 @@
           class="w-10 h-10 mb-4"
         />
         <p class="text-gray-700 text-center mb-6">
-          Krunal Thompson an exceptional cardiologist. His ability to explain
-          complex medical issues in a way that's easy to understand is truly
-          impressive.
+          El proceso fue rápido y sencillo. Me sentí seguro porque todo estuvo
+          supervisado por profesionales.
         </p>
         <div class="flex items-center space-x-4">
-          <img
-            src="assets/images/testimonials/03.png"
-            alt="testimonial"
-            class="w-14 h-14 rounded-full border-2 border-blue-200"
-          />
-          <div>
-            <h6 class="font-bold text-gray-900">Sabit Maris</h6>
-            <div class="flex text-yellow-400">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
-          </div>
+          <h6 class="font-bold text-gray-900">José Luis Huamán</h6>
         </div>
         <img
           src="assets/images/testimonials/02.png"
@@ -537,25 +316,34 @@
           class="w-10 h-10 mb-4"
         />
         <p class="text-gray-700 text-center mb-6">
-          Dr. Robert Thompson is an exceptional cardiologist. His ability to
-          explain complex medical issues in a way that's easy to understand is
-          truly impressive.
+          Nunca pensé que encontrar atención dental gratuita sería tan fácil.
+          Recomiendo CliniMatch a todos.
         </p>
         <div class="flex items-center space-x-4">
-          <img
-            src="assets/images/testimonials/04.png"
-            alt="testimonial"
-            class="w-14 h-14 rounded-full border-2 border-blue-200"
-          />
+          <h6 class="font-bold text-gray-900">Ana Lucía Paredes</h6>
+        </div>
+        <img
+          src="assets/images/testimonials/02.png"
+          alt="shape"
+          class="absolute bottom-4 right-4 w-10 h-10 opacity-30 pointer-events-none"
+        />
+      </div>
+      <!-- Testimonio 4 -->
+      <div
+        class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center relative"
+      >
+        <img
+          src="assets/images/testimonials/quotes.png"
+          alt="quotes"
+          class="w-10 h-10 mb-4"
+        />
+        <p class="text-gray-700 text-center mb-6">
+          Me atendieron con mucha paciencia y resolvieron todas mis dudas. ¡Muy
+          agradecido con el servicio!
+        </p>
+        <div class="flex items-center space-x-4">
           <div>
-            <h6 class="font-bold text-gray-900">Moris Patel</h6>
-            <div class="flex text-yellow-400">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
+            <h6 class="font-bold text-gray-900">Carlos Alberto Rojas</h6>
           </div>
         </div>
         <img
@@ -568,260 +356,23 @@
   </div>
 </div>
 
-<!-- Our Team Section -->
-<div class="py-16 bg-gray-100">
-  <div class="container mx-auto px-4">
-    <!-- Encabezado -->
-    <div class="mb-12 text-center">
-      <span class="uppercase text-blue-600 font-semibold tracking-wider"
-        >Our Doctors</span
-      >
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
-        Discover Expert <br />
-        Team Member
-      </h2>
-      <p class="text-gray-600 mt-4">
-        Our team of dedicated and highly skilled doctors is at the heart of our
-        commitment to providing exceptional medical care.
-      </p>
-    </div>
-    <!-- Miembros del equipo -->
-    <div
-      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
-    >
-      <!-- Miembro 1 -->
-      <div
-        class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
-      >
-        <a href="doctor-details.html">
-          <img
-            src="assets/images/team/01.jpg"
-            alt="team"
-            class="w-full h-56 object-cover"
-          />
-        </a>
-        <div class="p-4">
-          <a
-            href="#"
-            class="block text-lg font-semibold text-gray-900 hover:text-blue-600"
-            >Dr. Rachel Evans</a
-          >
-          <p class="text-gray-600 text-sm mt-1">MBBS, MD - Oncologists</p>
-        </div>
-      </div>
-      <!-- Miembro 2 -->
-      <div
-        class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
-      >
-        <a href="doctor-details.html">
-          <img
-            src="assets/images/team/02.jpg"
-            alt="team"
-            class="w-full h-56 object-cover"
-          />
-        </a>
-        <div class="p-4">
-          <a
-            href="#"
-            class="block text-lg font-semibold text-gray-900 hover:text-blue-600"
-            >Dr. Jessica Lee</a
-          >
-          <p class="text-gray-600 text-sm mt-1">MBBS, MD - Oncologists</p>
-        </div>
-      </div>
-      <!-- Miembro 3 -->
-      <div
-        class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
-      >
-        <a href="doctor-details.html">
-          <img
-            src="assets/images/team/03.jpg"
-            alt="team"
-            class="w-full h-56 object-cover"
-          />
-        </a>
-        <div class="p-4">
-          <a
-            href="#"
-            class="block text-lg font-semibold text-gray-900 hover:text-blue-600"
-            >Dr. Lisa Morgan</a
-          >
-          <p class="text-gray-600 text-sm mt-1">MBBS, MD - Oncologists</p>
-        </div>
-      </div>
-      <!-- Miembro 4 -->
-      <div
-        class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
-      >
-        <a href="doctor-details.html">
-          <img
-            src="assets/images/team/04.jpg"
-            alt="team"
-            class="w-full h-56 object-cover"
-          />
-        </a>
-        <div class="p-4">
-          <a
-            href="#"
-            class="block text-lg font-semibold text-gray-900 hover:text-blue-600"
-            >Dr. Emily Carter</a
-          >
-          <p class="text-gray-600 text-sm mt-1">MBBS, MD - Oncologists</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Blog Section -->
-<div class="py-16 bg-white">
-  <div class="container mx-auto px-4">
-    <!-- Encabezado -->
-    <div
-      class="mb-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6"
-    >
-      <div>
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
-          Health Insights <br />
-          and Tips
-        </h2>
-      </div>
-      <p class="text-gray-600 max-w-2xl">
-        Our team of dedicated and highly skilled doctors is at the heart of our
-        commitment to providing exceptional medical care. Each member of our
-        team brings a wealth of knowledge, experience.
-      </p>
-    </div>
-    <!-- Blog Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Blog 1 -->
-      <div
-        class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
-      >
-        <a href="blog-details.html">
-          <img
-            src="assets/images/blog/02.webp"
-            alt="blog-image"
-            class="w-full h-56 object-cover"
-          />
-        </a>
-        <div class="p-6 flex flex-col h-full">
-          <div class="flex items-center text-sm text-gray-500 mb-2 space-x-4">
-            <span>By Alison</span>
-            <span>July 16, 2024</span>
-          </div>
-          <a href="blog-details.html" class="mb-4">
-            <h5
-              class="text-lg font-semibold text-gray-900 hover:text-blue-600 transition"
-            >
-              Demystifying Male Infertility Causes Symptoms Tests
-            </h5>
-          </a>
-          <a
-            href="blog-details.html"
-            class="mt-auto inline-flex items-center px-4 py-2 border border-blue-600 text-blue-600 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition"
-          >
-            Read More
-            <img
-              src="assets/images/banner/icons/arrow--up-right.svg"
-              alt=""
-              class="ml-2 h-4 w-4"
-            />
-          </a>
-        </div>
-      </div>
-      <!-- Blog 2 -->
-      <div
-        class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
-      >
-        <a href="blog-details.html">
-          <img
-            src="assets/images/blog/03.webp"
-            alt="blog-image"
-            class="w-full h-56 object-cover"
-          />
-        </a>
-        <div class="p-6 flex flex-col h-full">
-          <div class="flex items-center text-sm text-gray-500 mb-2 space-x-4">
-            <span>By Alison</span>
-            <span>July 16, 2024</span>
-          </div>
-          <a href="blog-details.html" class="mb-4">
-            <h5
-              class="text-lg font-semibold text-gray-900 hover:text-blue-600 transition"
-            >
-              Medi Demystifying Male Infertility Causes Tests
-            </h5>
-          </a>
-          <a
-            href="blog-details.html"
-            class="mt-auto inline-flex items-center px-4 py-2 border border-blue-600 text-blue-600 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition"
-          >
-            Read More
-            <img
-              src="assets/images/banner/icons/arrow--up-right.svg"
-              alt=""
-              class="ml-2 h-4 w-4"
-            />
-          </a>
-        </div>
-      </div>
-      <!-- Blog 3 -->
-      <div
-        class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
-      >
-        <a href="blog-details.html">
-          <img
-            src="assets/images/blog/01.webp"
-            alt="blog-image"
-            class="w-full h-56 object-cover"
-          />
-        </a>
-        <div class="p-6 flex flex-col h-full">
-          <div class="flex items-center text-sm text-gray-500 mb-2 space-x-4">
-            <span>By Alison</span>
-            <span>July 16, 2024</span>
-          </div>
-          <a href="blog-details.html" class="mb-4">
-            <h5
-              class="text-lg font-semibold text-gray-900 hover:text-blue-600 transition"
-            >
-              Crist Male Infertility Causes Symptoms Tests
-            </h5>
-          </a>
-          <a
-            href="blog-details.html"
-            class="mt-auto inline-flex items-center px-4 py-2 border border-blue-600 text-blue-600 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition"
-          >
-            Read More
-            <img
-              src="assets/images/banner/icons/arrow--up-right.svg"
-              alt=""
-              class="ml-2 h-4 w-4"
-            />
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- Request Appointment Section -->
-<div class="py-24 bg-gray-100">
+<div class="py-16 bg-blue-100">
   <div class="container mx-auto px-4">
-    <div class="bg-blue-100 rounded-3xl shadow-lg py-16 px-8 text-center">
-      <span class="uppercase text-blue-600 font-semibold tracking-wider"
-        >Book Appointment</span
-      >
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-4 mb-8">
-        Request Your Appointment
+    <div class="py-3 px-8 text-center">
+      <span class="uppercase text-sky-600 font-bold tracking-wider">
+        ¿Necesitas atención dental gratuita?
+      </span>
+      <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mt-4 mb-8">
+        Regístrate ahora y encuentra estudiantes de <br />
+        odontología listos para ayudarte.
       </h2>
-      <a
-        href="appoinment.html"
-        class="inline-block px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition"
+      <button
+        (click)="openCtaModal()"
+        class="inline-block px-8 py-3 bg-sky-600 text-white rounded-lg font-semibold shadow hover:bg-sky-500 transition"
       >
-        Get Appointment
-      </a>
+        Registrarme como paciente
+      </button>
     </div>
   </div>
 </div>
