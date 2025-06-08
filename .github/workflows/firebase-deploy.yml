@@ -21,4 +21,4 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_CLINIMATCH_51256 }}' # Reemplaza <nombre-de-tu-proyecto>
           channelId: live
-          projectId: 1:209207710574:web:284dbcb1de778f6660e77f # Reemplaza con el ID de tu proyecto de Firebase
+          projectId: clinimatch-51256 # Reemplaza con el ID de tu proyecto de Firebase
