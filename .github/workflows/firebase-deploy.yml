@@ -9,11 +9,10 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
           node-version: 20 # O la versión que uses
-      - run: node -v # Agrega este paso para verificar la versión de Node.js
       - run: npm ci
       - run: npm run build -- --configuration production # O el nombre de tu configuración de producción
       - uses: FirebaseExtended/action-hosting-deploy@v0
