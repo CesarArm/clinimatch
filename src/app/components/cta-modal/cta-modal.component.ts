@@ -26,9 +26,6 @@ export class CtaModalComponent {
     descripcion: ''
   };
 
-  // URL de tu Google Apps Script (reemplaza con tu URL real)
-  private APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyCWDAwI0_jUtRfpTIRZBKusVh_cUUiT7Ba19zElFA7MTVnKEMNshY1Dat9a8jM13mv/exec';
-
   constructor(public modalService: ModalService, public sheetsService: SheetsService) { }
 
   async onSubmit() {
