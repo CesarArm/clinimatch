@@ -30,7 +30,6 @@ export class CtaModalComponent {
 
   constructor(public modalService: ModalService, public sheetsService: SheetsService) { }
 
-
   async onSubmit() {
     // Validar que los campos requeridos estén llenos
     if (
@@ -111,6 +110,10 @@ export class CtaModalComponent {
         confirmButtonText: 'Aceptar'
       });
     }
+  }
+
+  onCancel() {
+    this.closeModal.emit();
   }
 
   private resetForm() {
