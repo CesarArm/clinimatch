@@ -14,7 +14,8 @@
           Dental <span class="text-sky-600"><br />100% Gratuita</span>
         </h1>
         <p class="text-lg text-gray-600 mb-8">
-          Recibe tratamiento dental seguro y sin pagar, de parte de estudiantes supervisados.
+          Recibe tratamiento dental seguro y sin pagar, de parte de estudiantes
+          supervisados.
         </p>
         <div class="flex items-center gap-6 mb-8">
           <!-- Botón principal -->
@@ -37,6 +38,39 @@
     </div>
   </div>
 </div>
+
+<!-- Sección del video de YouTube -->
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+        Conoce más sobre CliniMatch
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Descubre cómo nuestra plataforma conecta estudiantes de odontología con
+        pacientes
+      </p>
+    </div>
+
+    <!-- Contenedor responsivo del video -->
+    <div class="max-w-4xl mx-auto">
+      <div
+        class="relative aspect-w-16 aspect-h-9 bg-black rounded-lg overflow-hidden shadow-lg"
+      >
+        <iframe
+          width="908"
+          height="512"
+          src="https://www.youtube.com/embed/iSzSP3vIeT4?autoplay=1"
+          title="Clinimatch video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Why Choose Us Section -->
 <div class="py-12 bg-gray-900">
@@ -253,10 +287,9 @@
 <div class="py-10 bg-gray-50">
   <div class="container mx-auto py-4 px-16">
     <!-- Título -->
-    <div class="mb-10 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
-        Personas como tú ya se <br />
-        atendieron con nosotros
+    <div class="mb-10 text-center w-full">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mx-auto max-w-[30rem]">
+        Personas como tú ya se atendieron con nosotros
       </h2>
     </div>
     <!-- Testimonios -->
@@ -271,17 +304,12 @@
           class="w-10 h-10 mb-4"
         />
         <p class="text-gray-700 text-center mb-6">
-          Me atendieron rápido y sin pagar nada ademas el chico fue muy
-          amable y el doctor lo revisaba siempre.
+          Me atendieron rápido y sin pagar nada ademas el chico fue muy amable y
+          el doctor lo revisaba siempre.
         </p>
         <div class="flex items-center space-x-4">
           <h6 class="font-bold text-gray-900">María Fernanda Quispe</h6>
         </div>
-        <img
-          src="assets/images/testimonials/02.png"
-          alt="shape"
-          class="absolute bottom-4 right-4 w-10 h-10 opacity-30 pointer-events-none"
-        />
       </div>
       <!-- Testimonio 2 -->
       <div
@@ -299,11 +327,6 @@
         <div class="flex items-center space-x-4">
           <h6 class="font-bold text-gray-900">José Luis Huamán</h6>
         </div>
-        <img
-          src="assets/images/testimonials/02.png"
-          alt="shape"
-          class="absolute bottom-4 right-4 w-10 h-10 opacity-30 pointer-events-none"
-        />
       </div>
       <!-- Testimonio 3 -->
       <div
@@ -315,17 +338,12 @@
           class="w-10 h-10 mb-4"
         />
         <p class="text-gray-700 text-center mb-6">
-          Pensé que era mentira, pero me escribieron por WhatsApp y me dieron cita en 2 días.
-          Todo fue ordenado y no pagué nada.
+          Pensé que era mentira, pero me escribieron por WhatsApp y me dieron
+          cita en 2 días. Todo fue ordenado y no pagué nada.
         </p>
         <div class="flex items-center space-x-4">
           <h6 class="font-bold text-gray-900">Ana Lucía Paredes</h6>
         </div>
-        <img
-          src="assets/images/testimonials/02.png"
-          alt="shape"
-          class="absolute bottom-4 right-4 w-10 h-10 opacity-30 pointer-events-none"
-        />
       </div>
       <!-- Testimonio 4 -->
       <div
@@ -337,18 +355,14 @@
           class="w-10 h-10 mb-4"
         />
         <p class="text-gray-700 text-center mb-6">
-          Me atendieron con mucha paciencia y resolvieron todas mis dudas. Muy recomendado!
+          Me atendieron con mucha paciencia y resolvieron todas mis dudas. Muy
+          recomendado!
         </p>
         <div class="flex items-center space-x-4">
           <div>
             <h6 class="font-bold text-gray-900">Carlos Alberto Rojas</h6>
           </div>
         </div>
-        <img
-          src="assets/images/testimonials/02.png"
-          alt="shape"
-          class="absolute bottom-4 right-4 w-10 h-10 opacity-30 pointer-events-none"
-        />
       </div>
     </div>
   </div>
@@ -362,8 +376,8 @@
         ¿Necesitas atención dental gratuita?
       </span>
       <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mt-4 mb-8">
-        Regístrate ahora y encuentra estudiantes de <br />
-        odontología listos para ayudarte.
+        Regístrate ahora y encuentra estudiantes de odontología listos para
+        ayudarte.
       </h2>
       <button
         (click)="openModal()"
@@ -391,9 +405,7 @@
           class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition-colors duration-200 flex justify-between items-center"
           (click)="toggleFaq('faq1')"
         >
-          <span class="font-semibold text-gray-800"
-            >¿Qué es CliniMatch?</span
-          >
+          <span class="font-semibold text-gray-800">¿Qué es CliniMatch?</span>
           <svg
             class="w-5 h-5 text-gray-500 transform transition-transform duration-200"
             id="faq1-icon"
@@ -507,7 +519,6 @@
           básicos y una descripción de tus necesidades dentales para comenzar.
         </div>
       </div>
-
     </div>
   </div>
 </div>

@@ -1,70 +1,144 @@
 <!-- cta-modal.component.html -->
 <div class="fixed z-50 inset-0 overflow-y-auto" *ngIf="isOpen" aria-labelledby="modal-title" role="dialog" aria-modal="true">
   <div class="flex items-center justify-center min-h-screen px-4 py-8">
-    <div class="fixed inset-0 bg-black opacity-50 transition-opacity" aria-hidden="true" (click)="onCancel()"></div>
+    <!-- Overlay con CSS personalizado -->
+    <div class="fixed inset-0 modal-overlay" aria-hidden="true" (click)="onCancel()"></div>
 
-    <div class="relative bg-white rounded shadow-lg overflow-hidden sm:max-w-md sm:w-full">
-      <div class="flex items-start justify-between p-4 rounded-t">
-        <h3 class="text-lg font-semibold text-gray-900" id="modal-title">
-          ¡Solicita tu cita ahora!
-        </h3>
-        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" (click)="onCancel()">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-          </svg>
-        </button>
-      </div>
-      <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-        <div class="mt-2">
-          <p class="text-sm text-gray-500">
-            Completa el siguiente formulario para solicitar tu cita.
-          </p>
+    <!-- Modal mejorado -->
+    <div class="relative bg-white rounded-2xl shadow-2xl overflow-hidden max-w-lg w-full mx-4 transform transition-all">
+      <!-- Header más elegante -->
+      <div class="bg-gradient-to-r from-sky-600 to-sky-700 px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <div>
+              <h3 class="text-xl font-bold text-white" id="modal-title">
+                ¡Solicita tu cita!
+              </h3>
+              <p class="text-sky-100 text-sm">Agenda tu consulta dental</p>
+            </div>
+          </div>
+          <button type="button"
+                  class="text-white hover:bg-opacity-20 rounded-lg text-sm p-2 transition-colors duration-200 cursor-pointer"
+                  (click)="onCancel()">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
         </div>
-        <form (ngSubmit)="onSubmit()" class="mt-4">
-          <div class="mb-4">
-            <label for="nombres" class="block text-gray-600 text-sm font-bold mb-2">Nombres *</label>
-            <input type="text" id="nombres" [(ngModel)]="formData.nombres" name="nombres" required
-                   class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+
+      <!-- Contenido del formulario -->
+      <div class="px-6 py-6">
+        <form (ngSubmit)="onSubmit()" class="space-y-6">
+          <!-- Nombres -->
+          <div class="space-y-2">
+            <label for="nombres" class="block text-sm font-semibold text-gray-700">
+              Nombres <span class="text-red-500">*</span>
+            </label>
+            <input type="text"
+                   id="nombres"
+                   [(ngModel)]="formData.nombres"
+                   name="nombres"
+                   required
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white"
+                   placeholder="Ingresa tus nombres">
           </div>
-          <div class="mb-4">
-            <label for="apellidos" class="block text-gray-600 text-sm font-bold mb-2">Apellidos *</label>
-            <input type="text" id="apellidos" [(ngModel)]="formData.apellidos" name="apellidos" required
-                   class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+          <!-- Apellidos -->
+          <div class="space-y-2">
+            <label for="apellidos" class="block text-sm font-semibold text-gray-700">
+              Apellidos <span class="text-red-500">*</span>
+            </label>
+            <input type="text"
+                   id="apellidos"
+                   [(ngModel)]="formData.apellidos"
+                   name="apellidos"
+                   required
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white"
+                   placeholder="Ingresa tus apellidos">
           </div>
-          <div class="mb-4">
-            <label for="edad" class="block text-gray-600 text-sm font-bold mb-2">Edad *</label>
-            <input type="number" id="edad" [(ngModel)]="formData.edad" name="edad" required
-                   class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+          <!-- Edad -->
+          <div class="space-y-2">
+            <label for="edad" class="block text-sm font-semibold text-gray-700">
+              Edad <span class="text-red-500">*</span>
+            </label>
+            <input type="number"
+                   id="edad"
+                   [(ngModel)]="formData.edad"
+                   name="edad"
+                   required
+                   min="1"
+                   max="120"
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white"
+                   placeholder="Tu edad">
           </div>
-          <div class="mb-4">
-            <label for="tipoConsulta" class="block text-gray-600 text-sm font-bold mb-2">Tipo de consulta *</label>
-            <select id="tipoConsulta" [(ngModel)]="formData.tipoConsulta" name="tipoConsulta" required
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500">
-              <option value="">Selecciona una opción</option>
-              <option value="Blanqueamiento">Blanqueamiento dental</option>
-              <option value="Cirugia">Cirugia oral</option>
-              <option value="Curaciones">Curaciones dentales</option>
-              <option value="Implantes dentales">Implantes dentales</option>
-              <option value="otro">Otro</option>
-            </select>
+
+          <!-- Tipo de consulta -->
+          <div class="space-y-2">
+            <label for="tipoConsulta" class="block text-sm font-semibold text-gray-700">
+              Tipo de consulta <span class="text-red-500">*</span>
+            </label>
+            <div class="relative">
+              <select id="tipoConsulta"
+                      [(ngModel)]="formData.tipoConsulta"
+                      name="tipoConsulta"
+                      required
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white appearance-none">
+                <option value="">Selecciona una opción</option>
+                <option value="Blanqueamiento">🦷 Blanqueamiento dental</option>
+                <option value="Cirugia">🏥 Cirugía oral</option>
+                <option value="Curaciones">🔧 Curaciones dentales</option>
+                <option value="Implantes dentales">⚡ Implantes dentales</option>
+                <option value="otro">📋 Otro</option>
+              </select>
+              <!-- Icono de dropdown -->
+              <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </div>
+            </div>
           </div>
-          <div class="mb-6">
-            <label for="descripcion" class="block text-gray-600 text-sm font-bold mb-2">Descripción (opcional)</label>
-            <textarea id="descripcion" [(ngModel)]="formData.descripcion" name="descripcion" rows="3"
-                      class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      placeholder="Describe brevemente tu consulta..."></textarea>
+
+          <!-- Descripción -->
+          <div class="space-y-2">
+            <label for="descripcion" class="block text-sm font-semibold text-gray-700">
+              Descripción <span class="text-gray-400 text-xs">(opcional)</span>
+            </label>
+            <textarea id="descripcion"
+                      [(ngModel)]="formData.descripcion"
+                      name="descripcion"
+                      rows="3"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white resize-none"
+                      placeholder="Describe brevemente tu consulta o cualquier detalle importante..."></textarea>
           </div>
-          <div class="flex items-center justify-between">
+
+          <!-- Botones de acción -->
+          <div class="flex flex-col sm:flex-row gap-3 pt-4">
             <button type="submit"
-                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
-              Solicitar Cita
+                    class="flex-1 bg-gradient-to-r from-sky-600 to-sky-700 hover:from-sky-700 hover:to-sky-800 text-white font-semibold py-3 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 transition-all duration-200 transform hover:scale-105 shadow-lg">
+              <span class="flex items-center justify-center space-x-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <span>Solicitar Cita</span>
+              </span>
             </button>
-            <button type="button" (click)="onCancel()"
-                    class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
+            <button type="button"
+                    (click)="onCancel()"
+                    class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-3 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-all duration-200">
               Cancelar
             </button>
           </div>
         </form>
+      </div>
+
+      <!-- Footer informativo -->
+      <div class="bg-gray-50 px-6 py-4 border-t border-gray-100">
+        <p class="text-xs text-gray-500 text-center">
+          🔒 Tus datos están seguros y solo se utilizarán para contactarte sobre tu cita.
+        </p>
       </div>
     </div>
   </div>

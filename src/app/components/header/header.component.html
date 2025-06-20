@@ -108,7 +108,9 @@
             class="text-gray-700 hover:text-sky-600 font-medium"
             >¿Cómo funciona?</a
           >
-          <a routerLink="/soy-estudiante" class="text-gray-700 hover:text-sky-600 font-medium"
+          <a
+            routerLink="/soy-estudiante"
+            class="text-gray-700 hover:text-sky-600 font-medium"
             >Soy estudiante</a
           >
         </nav>
@@ -150,24 +152,19 @@
     <div class="lg:hidden" [class.hidden]="!isMobileMenuOpen">
       <div class="px-2 pt-2 pb-3 space-y-1 bg-gray-50 rounded-lg mt-2">
         <a
-          href="#"
+          routerLink="/"
           class="block px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-white rounded-md"
           >Inicio</a
         >
         <a
-          href="#"
-          class="block px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-white rounded-md"
-          >Servicios</a
-        >
-        <a
-          href="#"
+          routerLink="/como-funciona"
           class="block px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-white rounded-md"
           >¿Cómo funciona?</a
         >
         <a
-          href="#"
+          routerLink="/soy-estudiante"
           class="block px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-white rounded-md"
-          >Contacto</a
+          >Soy estudiante</a
         >
         <!-- <button (click)="openModal()"
         class="block px-3 py-2 bg-sky-700 text-white hover:bg-sky-600 rounded-md text-center mt-4">

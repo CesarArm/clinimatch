@@ -6,6 +6,8 @@ import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { ModalService } from '../../services/modal.service';
 
+import YouTubePlayer from 'youtube-player';
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -13,7 +15,8 @@ import { ModalService } from '../../services/modal.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent{
+
   constructor(private modalService: ModalService) {}
 
   openModal() {
